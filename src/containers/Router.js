@@ -1,44 +1,19 @@
 import React, { Component, PropTypes } from 'react';
-import { NavigationExperimental } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-
-import Home from './Home';
+import Login from './Login';
 import Counter from './Counter';
 
-const { CardStack } = NavigationExperimental;
+const RouterWithRedux = connect()(Router);
 
-@connect(
-  state => state,
-  dispatch => ({ dispatch })
-)
-export default class Router extends Component {
-  static propTypes = {
-    routes: PropTypes.object.isRequired,
-    dispatch: PropTypes.func.isRequired
-  };
-
-  handleNavigation = action => {
-    this.props.dispatch(action);
-  }
-
-  renderScene = props => {
-    switch (props.scene.key) {
-      case 'scene_home':
-        return <Home navigate={this.handleNavigation} />;
-      case 'scene_counter':
-        return <Counter navigate={this.handleNavigation} />;
-      default:
-        return null;
-    }
-  }
-
+export default class AppRoute extends React.Component {
   render() {
     return (
-      <CardStack
-        direction="horizontal"
-        navigationState={this.props.routes}
-        renderScene={this.renderScene}
-      />
+      <RouterWithRedux>
+        <Scene key="root">
+          <Scene key="login" hideNavBar component={Login} title="登入" initial />
+        </Scene>
+      </RouterWithRedux>
     );
   }
 }
