@@ -7,20 +7,7 @@ import {
 import Swiper from 'react-native-swiper'
 
 const defaultProps = {
-  data: [{
-    img: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/6T4KJZ8W9M.jpg' },
-    text: 'Hello Swiper',
-    textPosition: 'bottomLeft',
-    textColor: '#fff',
-  }, {
-    img: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/OERP9XI9YB.jpg' },
-    text: 'Hello Swiper',
-  }, {
-    img: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/1U68PK9DJ0.jpg' },
-    text: 'Hello Swiper',
-    textPosition: 'topRight',
-    textColor: '#fff',
-  }],
+  data: [],
 };
 
 const propTypes = {
@@ -66,21 +53,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const Banner = (props) => {
-  return (
-    <Swiper style={styles.wrapper} height={250} horizontal autoplay>
-      <Image style={[styles.slide, styles.bottomLeft]} source={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/6T4KJZ8W9M.jpg' }}>
-        <Text style={[styles.text]}>Hello Swiper</Text>
-      </Image>
-      <Image style={styles.slide} source={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/OERP9XI9YB.jpg' }}>
-        <Text style={styles.text}>And simple</Text>
-      </Image>
-      <Image style={[styles.slide, styles.topRight]} source={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/1U68PK9DJ0.jpg' }}>
-        <Text style={styles.text}>Beautiful</Text>
-      </Image>
-    </Swiper>
-  );
-};
+const Banner = (props) => (
+  <Swiper style={styles.wrapper} height={250} horizontal autoplay>
+    {
+      props.data.map((data, i) => (
+        <Image key={`ad${i}`} style={[styles.slide, styles[data.textPosition]]} source={data.img}>
+          <Text style={[styles.text, { color: data.textColor || '#fff' }]}>{data.text}</Text>
+        </Image>
+      ))
+    }
+  </Swiper>
+);
 
 
 Banner.propTypes = propTypes;
