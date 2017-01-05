@@ -5,6 +5,7 @@ import {
   View,
 } from 'react-native';
 import Banner from '../components/Banner'
+import Card from '../components/Card'
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +33,18 @@ export default class Login extends Component {
     return (
       <View style={styles.container}>
         <Banner data={ad} />
+        <Card
+          title={'Beautiful wave'}
+          image={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/AOOC3CJARN.jpg' }}
+          subTitle={'Curated looks for creatives, pioneers, and individuals!'}
+          backgroundColor={'#fff'}
+        />
+        <Card
+          title={'Beautiful wave'}
+          image={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/B23METEB9K.jpg' }}
+          subTitle={'Curated looks for creatives, pioneers, and individuals!'}
+          imagePosition={'right'}
+        />
       </View>
     );
   }
