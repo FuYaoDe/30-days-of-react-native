@@ -11,22 +11,26 @@
  - 第二戰 87% 像 Spotify 登入頁面
 
   完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/2e1172018df94662faaaa17d2f6262b13088ebe6)
-  ![](http://ithelp.ithome.com.tw/upload/images/20170103/20103341kTWdi3TK3K.png)
+  <img src="http://ithelp.ithome.com.tw/upload/images/20170103/20103341kTWdi3TK3K.png" width="345">
+
 
 - 第三戰 首頁 - 廣告 Banner
 
   完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/4128b414033d2e524efd002d97d40bcfecfc1af4)
-  ![](http://i.imgur.com/R9y9aQl.gif)
+  <img src="http://i.imgur.com/R9y9aQl.gif" width="345">
+
 
 - 第四戰 首頁 - 卡片元件
 
   完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/30d464d6901c583a66c33489ea9d7103763a6dd0)
-  ![](http://ithelp.ithome.com.tw/upload/images/20170105/20103341xOvLKVEBlA.png)
+  <img src="http://ithelp.ithome.com.tw/upload/images/20170105/20103341xOvLKVEBlA.png" width="345">
+
 
 - 第五戰 首頁 - 實戰卡片 + ListView
 
   完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/2cee6d6fa91d2d0e802150d0d66dcac21378603f)
-  ![](http://i.imgur.com/OqlNw20.gif)
+  <img src="http://i.imgur.com/OqlNw20.gif" width="345">
+
 
 # Thanks
 
