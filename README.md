@@ -1,77 +1,33 @@
-# React Native Boilerplate [![Build Status](https://travis-ci.org/jhen0409/react-native-boilerplate.svg)](https://travis-ci.org/jhen0409/react-native-boilerplate) [![Dependency Status](https://david-dm.org/jhen0409/react-native-boilerplate.svg)](https://david-dm.org/jhen0409/react-native-boilerplate) [![devDependency Status](https://david-dm.org/jhen0409/react-native-boilerplate/dev-status.svg)](https://david-dm.org/jhen0409/react-native-boilerplate?type=dev)
+# 2017 iT 邦幫忙鐵人賽
 
-> The React Native, Redux boilerplate for personal usage
+這個專案是 2017 iT 邦幫忙鐵人賽 [React Native 航向真全端，建構雙平台 App 系列](http://ithelp.ithome.com.tw/users/20103341/ironman/1023) 的實戰篇的 App
 
-## Screenshot
+主要會一天新增一個功能帶大家一步一步的完成一款簡單的 React Native Ec App
 
-![screenshot](https://cloud.githubusercontent.com/assets/3001525/15508320/901e5fe6-2201-11e6-970b-e7c496ab1b16.gif)
+ - 第一戰 初始專案
 
-> NavigationExperimental, Redux Counter example and Remote Redux DevTools control
+  clone [React Native Boilerplate](https://github.com/jhen0409/react-native-boilerplate) 初始專案
 
-## Included
+ - 第二戰 87% 像 Spotify 登入頁面
 
-* [React](https://github.com/facebook/react) & [React Native](https://github.com/facebook/react-native) v0.34
-* [Redux](https://github.com/reactjs/redux) & [Remote Redux DevTools](https://github.com/zalmoxisus/remote-redux-devtools) & [On Debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
-* [Immutable](https://github.com/facebook/immutable-js) & [Immutable DevTools](https://github.com/andrewdavey/immutable-devtools)
-* [Babel](https://github.com/babel/babel) & Plugins: [transform-decorators-legacy](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy)
+  完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/2e1172018df94662faaaa17d2f6262b13088ebe6)
+  ![](http://ithelp.ithome.com.tw/upload/images/20170103/20103341kTWdi3TK3K.png)
 
-## Installation
+- 第三戰 首頁 - 廣告 Banner
 
-See [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html) to install requirement tools.
+  完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/4128b414033d2e524efd002d97d40bcfecfc1af4)
+  ![](http://i.imgur.com/R9y9aQl.gif)
 
-```bash
-$ npm install -g react-native-cli
-$ npm install
-```
+- 第四戰 首頁 - 卡片元件
 
-Also, you can use [generator-rnb](https://github.com/jhen0409/generator-rnb) to create project with this boilerplate.
+  完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/30d464d6901c583a66c33489ea9d7103763a6dd0)
+  ![](http://ithelp.ithome.com.tw/upload/images/20170105/20103341xOvLKVEBlA.png)
 
-## Development
+- 第五戰 首頁 - 實戰卡片 + ListView
 
-#### Start local server
+  完成結果，[更改部分](https://github.com/FuYaoDe/30-days-of-react-native/commit/2cee6d6fa91d2d0e802150d0d66dcac21378603f)
+  ![](http://i.imgur.com/OqlNw20.gif)
 
-```bash
-$ npm start
-```
+# Thanks
 
-#### iOS
-
-Run command to open iOS simulator and run app:
-
-```bash
-$ npm run ios
-```
-
-Or open `ios/RNBoilerplate.xcodeproj` file with XCode:
-
-```bash
-$ npm run ios-open
-```
-
-#### Android (5.0+)
-
-Open Android emulator (recommended [Genymotion](https://www.genymotion.com)) and run command: (Or connect real device via USB)
-
-```bash
-$ npm run android
-```
-
-## DevTools
-
-In development mode, you can install [React Native Debugger](https://github.com/jhen0409/react-native-debugger) as default debugger. if not install, it will use [Remote Redux DevTools](https://github.com/zalmoxisus/remote-redux-devtools) and [On Debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger).
-
-## Test
-
-We used [react-native-mock](https://github.com/lelandrichardson/react-native-mock), and test with [Mocha](https://github.com/mochajs/mocha), [Enzyme](https://github.com/airbnb/enzyme).
-
-```bash
-$ npm test
-```
-
-## Credits
-
-* [react-native-counter-ios-android](https://github.com/chentsulin/react-native-counter-ios-android)'s counter example.
-
-## LICENSE
-
-[MIT](LICENSE)
+- [React Native Boilerplate](https://github.com/jhen0409/react-native-boilerplate)
