@@ -3,10 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
+  ListView,
 } from 'react-native';
 import Banner from '../components/Banner'
 import Card from '../components/Card'
-
+import { Actions } from 'react-native-router-flux';
 const styles = StyleSheet.create({
   container: {
     paddingTop: 64,
@@ -27,23 +28,51 @@ const ad = [{
   textPosition: 'topLeft',
 }];
 
-export default class Login extends Component {
+const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+const dataSource = ds.cloneWithRows([{
+  title: 'Beautiful wave',
+  subTitle: 'Curated looks for creatives, pioneers, and individuals!',
+  image: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/AOOC3CJARN.jpg' },
+  backgroundColor: '#fff',
+}, {
+  title: 'Beautiful wave',
+  subTitle: 'Curated looks for creatives, pioneers, and individuals!',
+  image: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/B23METEB9K.jpg' },
+  imagePosition: 'right',
+}, {
+  title: 'Beautiful wave',
+  subTitle: 'Curated looks for creatives, pioneers, and individuals!',
+  image: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/AOOC3CJARN.jpg' },
+  backgroundColor: '#fff',
+}, {
+  title: 'Beautiful wave',
+  subTitle: 'Curated looks for creatives, pioneers, and individuals!',
+  image: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/B23METEB9K.jpg' },
+}, {
+  title: 'Beautiful wave',
+  subTitle: 'Curated looks for creatives, pioneers, and individuals!',
+  image: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/AOOC3CJARN.jpg' },
+  backgroundColor: '#fff',
+}, {
+  title: 'Beautiful wave',
+  subTitle: 'Curated looks for creatives, pioneers, and individuals!',
+  image: { uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/B23METEB9K.jpg' },
+}]);
+
+export default class Home extends Component {
   static propTypes = {};
+
   render() {
     return (
       <View style={styles.container}>
         <Banner data={ad} />
-        <Card
-          title={'Beautiful wave'}
-          image={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/AOOC3CJARN.jpg' }}
-          subTitle={'Curated looks for creatives, pioneers, and individuals!'}
-          backgroundColor={'#fff'}
-        />
-        <Card
-          title={'Beautiful wave'}
-          image={{ uri: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/B23METEB9K.jpg' }}
-          subTitle={'Curated looks for creatives, pioneers, and individuals!'}
-          imagePosition={'right'}
+        <ListView
+          dataSource={dataSource}
+          renderRow={(rowData, sectionID, rowID) => <Card
+            {...rowData}
+            imagePosition={rowID % 2 === 1 ? 'right' : 'left'}
+            onPress={() => Actions.cardDetail({ ...rowData })}
+          />}
         />
       </View>
     );

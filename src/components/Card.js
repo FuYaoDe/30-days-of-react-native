@@ -3,6 +3,7 @@ import {
   Text,
   Image,
   StyleSheet,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -11,7 +12,8 @@ const defaultProps = {
   subTitle: '',
   image: '',
   imagePosition: 'left',
-  backgroundColor: 'rgb(238, 219, 214)'
+  backgroundColor: 'rgb(238, 219, 214)',
+  onPress: () => {},
 };
 
 const propTypes = {
@@ -19,6 +21,7 @@ const propTypes = {
   image: PropTypes.object,
   subTitle: PropTypes.string,
   imagePosition: PropTypes.string,
+  onPress: PropTypes.func,
 };
 
 const styles = StyleSheet.create({
@@ -55,13 +58,16 @@ const styles = StyleSheet.create({
 const Card = (props) => {
   let flexDirection = props.imagePosition === 'left' ? 'row' : 'row-reverse';
   return(
-    <View style={[styles.container, { flexDirection }]}>
+    <TouchableOpacity
+      style={[styles.container, { flexDirection }]}
+      onPress={props.onPress}
+    >
       <Image source={props.image} style={styles.img} />
       <View style={[styles.desc, { backgroundColor: props.backgroundColor }]}>
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.subTitle}>{props.subTitle}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
