@@ -23,8 +23,10 @@
     "lodash": "^4.3.0",
     "react": "~15.4.1",
     "react-native": "0.38.0",
+    "react-native-parallax-view": "^2.0.6",
     "react-native-router-flux": "^3.37.0",
     "react-native-swiper": "^1.5.4",
+    "react-native-vector-icons": "^3.0.0",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1",
     "redux-thunk": "^2.0.1"
