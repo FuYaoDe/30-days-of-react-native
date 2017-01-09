@@ -3,8 +3,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Alert,
   Image,
+  AsyncStorage
 } from 'react-native';
 import AppIntro from 'react-native-app-intro';
 import { Actions } from 'react-native-router-flux';
@@ -49,11 +49,23 @@ const styles = StyleSheet.create({
 
 export default class Intro extends Component {
   static propTypes = {};
-  onSkipBtnHandle = (index) => {
-    Actions.home()
+
+  setStorage = async () => {
+    try {
+      await AsyncStorage.setItem('@Route:initialPage', 'login');
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+  onSkipBtnHandle = () => {
+    this.setStorage().done();
+    Actions.home();
+  }
+
   doneBtnHandle = () => {
-    Actions.home()
+    this.setStorage().done();
+    Actions.home();
   }
 
   render() {
