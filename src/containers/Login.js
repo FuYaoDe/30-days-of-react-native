@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -61,7 +63,7 @@ export default class Login extends Component {
           <Text style={styles.desc}>Save any song, album or artist to yout own music collection.</Text>
         </View>
         <View style={styles.bottmContainer}>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#53423D'}]}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#53423D'}]} onPress={Actions.home}>
             <Text style={styles.buttonText}>LOG IN</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#A58987' }]}>
