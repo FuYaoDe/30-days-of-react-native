@@ -96,6 +96,14 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file(HELLORN_STORE_FILE)
+            keyAlias HELLORN_KEY_ALIAS
+            storePassword HELLORN_STORE_PASSWORD
+            keyPassword HELLORN_KEY_PASSWORD
+        }
+    }
     splits {
         abi {
             reset()
@@ -108,6 +116,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
