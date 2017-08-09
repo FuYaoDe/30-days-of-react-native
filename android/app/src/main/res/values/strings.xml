@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">1jVtOffbaJOiu3XAvN8i0gvUD_k1NJXpQFxLM</string>
     <string name="app_name">RNBoilerplate</string>
 </resources>

@@ -56,7 +56,7 @@ export default class Login extends Component {
       <View style={styles.container}>
         <Image style={styles.background} source={{ uri: 'https://unsplash.it/800/600?image=102&blur' }} />
         <View style={styles.container}>
-          <Text style={[styles.title, { fontSize: 40}]}>Logo</Text>
+          <Text style={[styles.title, { fontSize: 40}]}>這是新版本</Text>
         </View>
         <View style={styles.container}>
           <Text style={styles.title}>Your Music</Text>

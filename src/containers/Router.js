@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Router, Scene } from 'react-native-router-flux';
-import { AsyncStorage, View, Text, StyleSheet } from 'react-native';
+import { AsyncStorage, View, Text, StyleSheet, Alert } from 'react-native';
 import { connect } from 'react-redux';
+import CodePush from 'react-native-code-push';
+
 import Intro from './Intro';
 import Login from './Login';
 import Home from './Home';
@@ -32,7 +34,39 @@ export default class AppRoute extends React.Component {
   }
   componentWillMount() {
     this.getStorage().done();
-    // this.setState({ firstPage: 'login' });
+  }
+
+  componentDidMount() {
+
+    CodePush.checkForUpdate()
+    .then( (update) =>{
+        if( !update ){
+            Alert.alert("app是最新版了");
+        }else {
+            Alert.alert("有更新哦");
+        }
+    });
+
+    CodePush.sync({ updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
+      (status) => {
+        switch (status) {
+          case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
+            // this.setState({showDownloadingModal: true});
+            // this.refs.modal.open();
+            break;
+          case CodePush.SyncStatus.INSTALLING_UPDATE:
+            // this.setState({showInstalling: true});
+            break;
+          case CodePush.SyncStatus.UPDATE_INSTALLED:
+            // this.refs.modal.close();
+            // this.setState({showDownloadingModal: false});
+            break;
+        }
+      },
+      ({ receivedBytes, totalBytes, }) => {
+          // this.setState({downloadProgress: receivedBytes / totalBytes * 100});
+      }
+    );
   }
 
   getStorage = async () => {
@@ -41,6 +75,8 @@ export default class AppRoute extends React.Component {
       if (value !== null) {
         console.log(value);
         this.setState({ firstPage: value });
+      } else {
+        this.setState({ firstPage: 'intro' });
       }
     } catch (error) {
       console.log(error);
@@ -65,7 +101,7 @@ export default class AppRoute extends React.Component {
             key="home"
             hideNavBar={false}
             hideBackImage={true}
-            onBack={() => {}} component={Home} title="Home"
+            onBack={() => {}} component={Home} title="Home!!"
             initial={firstPage === 'home'}
           />
           <Scene key="cardDetail" hideNavBar={false} component={Detail} />
